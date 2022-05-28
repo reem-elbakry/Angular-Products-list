@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <img src={{productData?.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title btn" (click)="getDetails()" [routerLink]="['/product', productData?.id]">{{productData?.title}}</h5>
+      <h6>{{productData?.price|currency: 'EGP'}}</h6>
+      <p [hidden]="!displayAllProducts">{{productData?.description|descslice:0:30}}</p>
+      <a href="#" class="btn btn-warning">ADD TO CART</a>
+    </div>
+</div>
