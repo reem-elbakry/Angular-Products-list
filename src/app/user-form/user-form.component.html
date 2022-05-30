@@ -1,0 +1,17 @@
+<div class="container m-5">
+    <h3 class="my-5 text-warning">Login</h3>
+    <form #userform="ngForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" id="username" #username="ngModel" [(ngModel)]="user.username" required>
+          <p class="text-danger" [hidden]="username.valid || username.pristine">Username is required!</p>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password" #password="ngModel" [(ngModel)]="user.password" required>
+          <p class="text-danger" [hidden]="password.valid || password.pristine">Password is required!</p>
+        </div>
+        <button type="button" class="btn btn-warning" (click)="login()" [disabled]="userform.invalid">Submit</button>
+      </form>
+</div>
+

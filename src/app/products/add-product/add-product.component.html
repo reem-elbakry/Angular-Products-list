@@ -1,0 +1,30 @@
+<div class="container m-5">
+    <h3 class="my-5 text-warning">ADD PRODUCT</h3>
+    <form [formGroup] = "productform">
+        <div class="mb-3">
+            <input type="hidden" formControlName="id" class="form-control" id="id" [(ngModel)]="id">
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" formControlName="title" class="form-control" id="title">
+          <p class="text-danger" [hidden]="title.valid || title.pristine" >Title is required!</p>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" formControlName="description" class="form-control" id="description">
+            <p class="text-danger" [hidden]="description.valid || description.pristine" >Description is required!</p>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">ImageURL</label>
+            <input type="text" formControlName="image" class="form-control" id="image">
+            <p class="text-danger" [hidden]="image.valid || image.pristine" >ImageURL is required!</p>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" formControlName="price" class="form-control" id="price">
+            <p class="text-danger" [hidden]="price.valid || price.pristine" >Price is required!</p>
+        </div>
+
+        <button type="button" class="btn btn-warning" [disabled]="productform.invalid" (click)="addproduct(productform.value)">ADD</button>
+      </form>
+</div>

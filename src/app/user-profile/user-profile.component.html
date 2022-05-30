@@ -1,0 +1,12 @@
+<h1 class="text-center m-5 text-warning">{{userData?.name?.lastname}} Profile 🤟 </h1>
+
+<div class="d-flex justify-content-center m-5 text-center">
+  <div class="card" style="width: 18rem;" >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV610YnaFfeZH8HA6x1dXRxsKQ5I40A8WAZQ&usqp=CAU" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6>{{userData?.name?.firstname}} {{userData?.name?.lastname}}</h6>
+      <p>{{userData?.email}}</p>
+      <button class="btn btn-warning"[routerLink]="['/products']">Home</button>
+  </div>
+</div>
+
